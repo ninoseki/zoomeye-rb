@@ -10,16 +10,13 @@ module ZoomEye
       HOST = "api.zoomeye.org"
       BASE_URL = "https://#{HOST}"
 
-      def initialize(username:, password:)
+      def initialize(username: nil, password: nil, access_token: nil)
         @username = username
         @password = password
+        @access_token = access_token
       end
 
       private
-
-      def access_token
-        @access_token ||= _post("/user/login", username: @username, password: @password) { |json| json.dig("access_token") }
-      end
 
       def url_for(path)
         URI(BASE_URL + path)
@@ -59,7 +56,7 @@ module ZoomEye
 
       def token_headers
         {
-          Authorization: "JWT #{access_token}"
+          Authorization: "JWT #{@access_token}"
         }
       end
 
