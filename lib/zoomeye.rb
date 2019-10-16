@@ -6,6 +6,7 @@ require "zoomeye/clients/base"
 
 require "zoomeye/clients/host"
 require "zoomeye/clients/resource_info"
+require "zoomeye/clients/user"
 require "zoomeye/clients/web"
 
 require "zoomeye/api"
