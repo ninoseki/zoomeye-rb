@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "zoomeye/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "zoomeye"
+  spec.name          = "zoomeye-rb"
   spec.version       = ZoomEye::VERSION
   spec.authors       = ["Manabu Niseki"]
   spec.email         = ["manabu.niseki@gmail.com"]
