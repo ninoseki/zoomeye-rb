@@ -17,11 +17,11 @@ gem install zoomeye
 ```ruby
 require "zoomeye"
 
-# when given nothing, it tries to load your usernamem & password via ENV["ZOOMEYE_USERNAME"] and ENV["ZOOMEYE_PASSWORD"]
+# when given nothing, it tries to load your API key via ENV["ZOOMEYE_API_KEY"]
 api = ZoomEye::API.new
 
 # or you can set them manually
-api = ZoomEye::API.new(username: "USERNAME", password: "PASSWORD")
+api = ZoomEye::API.new(api_key: "YOUR_API_KEY")
 
 # Host search
 api.host.search("port:80 nginx")

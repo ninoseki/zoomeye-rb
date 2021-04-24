@@ -26,14 +26,12 @@ RSpec.configure do |config|
   end
 end
 
-ENV["ZOOMEYE_USERNAME"] = "foo bar" unless ENV.key?("ZOOMEYE_USERNAME")
-ENV["ZOOMEYE_PASSWORD"] = "foo bar" unless ENV.key?("ZOOMEYE_PASSWORD")
+ENV["ZOOMEYE_API_KEY"] = "foo bar" unless ENV.key?("ZOOMEYE_API_KEY")
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
   config.configure_rspec_metadata!
 
-  config.filter_sensitive_data("<CENSORED>") { ENV["ZOOMEYE_USERNAME"] }
-  config.filter_sensitive_data("<CENSORED>") { ENV["ZOOMEYE_PASSWORD"] }
+  config.filter_sensitive_data("<CENSORED>") { ENV["ZOOMEYE_API_KEY"] }
 end

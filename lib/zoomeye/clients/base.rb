@@ -10,10 +10,8 @@ module ZoomEye
       HOST = "api.zoomeye.org"
       BASE_URL = "https://#{HOST}"
 
-      def initialize(username: nil, password: nil, access_token: nil)
-        @username = username
-        @password = password
-        @access_token = access_token
+      def initialize(api_key)
+        @api_key = api_key
       end
 
       private
@@ -48,23 +46,17 @@ module ZoomEye
           when 200
             yield json
           else
-            error = json.dig("message") || body
+            error = json["message"] || body
             raise Error, "Unsupported response code returned: #{code} - #{error}"
           end
         end
       end
 
-      def token_headers
-        {
-          Authorization: "JWT #{@access_token}"
-        }
-      end
-
-      def build_request(type: "GET", path:, params: {})
+      def build_request(path:, type: "GET", params: {})
         uri = url_for(path)
         uri.query = URI.encode_www_form(params) if type == "GET"
 
-        headers = path == "/user/login" ? {} : token_headers
+        headers = { "API-KEY": @api_key }
 
         request = case type
                   when "GET"
