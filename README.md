@@ -1,6 +1,6 @@
 # zoomeye-rb
 
-[![Build Status](https://travis-ci.com/ninoseki/zoomeye-rb.svg?branch=master)](https://travis-ci.com/ninoseki/zoomeye-rb)
+[![Ruby CI](https://github.com/ninoseki/zoomeye-rb/actions/workflows/test.yml/badge.svg)](https://github.com/ninoseki/zoomeye-rb/actions/workflows/test.yml)
 [![Coverage Status](https://coveralls.io/repos/github/ninoseki/zoomeye-rb/badge.svg?branch=master)](https://coveralls.io/github/ninoseki/zoomeye-rb?branch=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/ninoseki/zoomeye-rb/badge)](https://www.codefactor.io/repository/github/ninoseki/zoomeye-rb)
 
